@@ -8,17 +8,13 @@ This project demonstrates how to establish reliable point-to-point communication
 
 > Developed by **Play with Circuit** to help makers and embedded developers learn practical LoRa communication with Arduino.
 
----
-
-# Introduction
+# Overview
 
 Wireless communication plays an important role in modern IoT systems. Technologies such as Wi-Fi and Bluetooth are ideal for short-range applications but consume relatively high power and have limited operating distance. Cellular networks offer wide coverage but increase both hardware complexity and operating costs.
 
 LoRa (Long Range) technology addresses these challenges by enabling wireless communication over several kilometres while consuming very little power. This makes it suitable for battery-operated IoT devices that transmit small amounts of data such as sensor readings, alarm notifications, GPS coordinates, and control commands.
 
 In this project, two Arduino Uno boards communicate wirelessly using **REYAX RYLR999 LoRa modules**. The objective is to understand the module interface, configure communication using AT commands, and build a reliable point-to-point wireless link.
-
----
 
 # About the REYAX RYLR999 Module
 
@@ -29,8 +25,6 @@ Unlike conventional LoRa modules, the RYLR999 provides separate UART channels fo
 One of the notable capabilities of the RYLR999 is its ability to function as a **BLE-to-LoRa bridge**, enabling mobile devices to exchange information across long distances through LoRa communication.
 
 Because of its high output power, low standby current, and long communication range, the module is suitable for industrial monitoring, agriculture, environmental sensing, smart cities, logistics, and remote telemetry applications.
-
----
 
 # Key Features
 
@@ -44,14 +38,11 @@ Because of its high output power, low standby current, and long communication ra
 - Ultra-low power sleep mode
 - Operating temperature: -40°C to +85°C
 
----
-
 # RYLR999 Pinout
 
 The module consists of seven interface pins that provide power, reset, BLE UART, and LoRa UART communication.
 
 ![Reyax RYLR999 LoRa Module Pinout](https://playwithcircuit.com/wp-content/uploads/2025/12/RYLR999-Pinout.webp)
-
 
 | Pin | Description |
 |------|-------------|
@@ -64,8 +55,6 @@ The module consists of seven interface pins that provide power, reset, BLE UART,
 | **GND** | Ground reference |
 
 The LoRa UART interface is used throughout this project for communication with the Arduino Uno.
-
----
 
 # Interfacing the RYLR999 with Arduino Uno
 
@@ -80,8 +69,6 @@ The Arduino sends AT commands to configure and transmit data through the module,
 
 This simple point-to-point setup provides an excellent foundation before implementing larger LoRa-based sensor networks or industrial monitoring systems.
 
----
-
 # Hardware Requirements
 
 - Arduino Uno R3 ×2
@@ -92,8 +79,6 @@ This simple point-to-point setup provides an excellent foundation before impleme
 - Breadboards
 - USB Cable
 - 12V Adapter (for Arduino supply)
-
----
 
 # Wiring Connections
 
@@ -107,8 +92,6 @@ The module's **VDD** pin is connected to the Arduino's 5V supply, while **GND** 
 
 The LCD is connected through the Arduino's I2C interface using the SDA and SCL pins, allowing transmitted messages and communication status to be displayed.
 
----
-
 ## Responder Circuit
 
 ![Wiring Connections for the Responder Setup](https://playwithcircuit.com/wp-content/uploads/2025/12/Wiring-RYLR999-Module-with-Arduino-UNO-Receiving-Side.webp)
@@ -117,9 +100,7 @@ The Responder Arduino continuously monitors incoming LoRa packets through its RY
 
 The wiring is identical to the Initiator setup except that no LCD is required. The Arduino receives the incoming packet through the LoRa UART interface, processes the received command, and immediately transmits a response back through the same module.
 
----
-
-# How This Project Works
+# How This Project Works?
 
 After powering both Arduino boards, each communicates with its respective RYLR999 module through the UART interface.
 
@@ -128,8 +109,6 @@ The Initiator periodically sends a text message such as **"Are you there?"** usi
 When the Responder receives the packet, the RYLR999 demodulates the signal and forwards the received data to the Arduino through UART. The Arduino verifies the received message and responds with **"Yes"**, which is transmitted back through the second LoRa module.
 
 This bidirectional communication demonstrates reliable long-range wireless data exchange and provides the foundation for developing applications such as remote sensor monitoring, industrial automation, agricultural systems, and IoT devices.
-
----
 
 ## Applications
 
@@ -141,8 +120,6 @@ This bidirectional communication demonstrates reliable long-range wireless data 
 - Smart Metering
 - Building Automation
 - Wireless Telemetry
-
----
 
 ## About Play with Circuit
 
