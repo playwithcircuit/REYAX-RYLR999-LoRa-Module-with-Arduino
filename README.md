@@ -2,6 +2,8 @@
 
 A practical guide to interfacing the **REYAX RYLR999 LoRa module** with Arduino Uno for long-range wireless communication.
 
+![How to Interface Reyax RYLR999 LoRa Module with Arduino](https://playwithcircuit.com/wp-content/uploads/2025/12/How-to-Interface-Reyax-RYLR999-LoRa-Module-with-Arduino.webp)
+
 This project demonstrates how to establish reliable point-to-point communication between two Arduino boards using the RYLR999 LoRa transceiver. One Arduino acts as the **Initiator**, periodically transmitting a message, while the second Arduino functions as the **Responder**, receives the packet, and sends an acknowledgement back. The project introduces LoRa communication, module configuration through AT commands, and UART-based interfacing with Arduino.
 
 > Developed by **Play with Circuit** to help makers and embedded developers learn practical LoRa communication with Arduino.
@@ -48,6 +50,9 @@ Because of its high output power, low standby current, and long communication ra
 
 The module consists of seven interface pins that provide power, reset, BLE UART, and LoRa UART communication.
 
+![Reyax RYLR999 LoRa Module Pinout](https://playwithcircuit.com/wp-content/uploads/2025/12/RYLR999-Pinout.webp)
+
+
 | Pin | Description |
 |------|-------------|
 | **VDD** | 5V power input (4.75V–5.25V) |
@@ -90,16 +95,11 @@ This simple point-to-point setup provides an excellent foundation before impleme
 
 ---
 
-# Software Requirements
-
-- Arduino IDE Version 2.3.4 or later
-- LiquidCrystal_I2C Library by Frank de Brabander
-
----
-
 # Wiring Connections
 
 ## Initiator Circuit
+
+![Wiring Connections for the Initiator Setup](https://playwithcircuit.com/wp-content/uploads/2025/12/Wiring-Connections-for-the-Initiator-Setup.webp)
 
 The Initiator Arduino sends commands to the RYLR999 module and displays the communication status on a 16×2 I2C LCD.
 
@@ -112,6 +112,8 @@ The LCD is connected through the Arduino's I2C interface using the SDA and SCL p
 ---
 
 ## Responder Circuit
+
+![Wiring Connections for the Responder Setup](https://playwithcircuit.com/wp-content/uploads/2025/12/Wiring-RYLR999-Module-with-Arduino-UNO-Receiving-Side.webp)
 
 The Responder Arduino continuously monitors incoming LoRa packets through its RYLR999 module.
 
@@ -129,7 +131,7 @@ The Initiator periodically sends a text message such as **"Are you there?"** usi
 
 When the Responder receives the packet, the RYLR999 demodulates the signal and forwards the received data to the Arduino through UART. The Arduino verifies the received message and responds with **"Yes"**, which is transmitted back through the second LoRa module.
 
-This bidirectional communication demonstrates reliable long-range wireless data exchange and provides the foundation for developing applications such as remote sensor monitoring, industrial automation, agricultural systems, telemetry, and IoT devices.
+This bidirectional communication demonstrates reliable long-range wireless data exchange and provides the foundation for developing applications such as remote sensor monitoring, industrial automation, agricultural systems, and IoT devices.
 
 ---
 
@@ -148,4 +150,4 @@ This bidirectional communication demonstrates reliable long-range wireless data 
 
 ## About Play with Circuit
 
-**Play with Circuit** publishes practical tutorials on Arduino, ESP32, STM32, Raspberry Pi, sensors, communication protocols, and embedded systems to help students, hobbyists, and engineers build real-world electronics projects.
+**Play with Circuit** publishes practical tutorials on Arduino, ESP32, sensors, communication protocols, and embedded systems to help students, hobbyists, and engineers build real-world electronics projects.
