@@ -107,8 +107,6 @@ The module's **VDD** pin is connected to the Arduino's 5V supply, while **GND** 
 
 The LCD is connected through the Arduino's I2C interface using the SDA and SCL pins, allowing transmitted messages and communication status to be displayed.
 
-> **Insert Initiator Wiring Diagram Here**
-
 ---
 
 ## Responder Circuit
@@ -118,8 +116,6 @@ The LCD is connected through the Arduino's I2C interface using the SDA and SCL p
 The Responder Arduino continuously monitors incoming LoRa packets through its RYLR999 module.
 
 The wiring is identical to the Initiator setup except that no LCD is required. The Arduino receives the incoming packet through the LoRa UART interface, processes the received command, and immediately transmits a response back through the same module.
-
-> **Insert Responder Wiring Diagram Here**
 
 ---
 
